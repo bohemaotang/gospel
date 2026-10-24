@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>sheep on his right hand · an ocean shrine</title>
+<title>GOSPEL · an ocean shrine</title>
 <meta name="description" content="An OC impression site.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%2303060a'/%3E%3Crect x='5' y='2' width='6' height='4' fill='%2386d7e8'/%3E%3Crect x='6' y='6' width='1' height='5' fill='%2393b1c0'/%3E%3Crect x='9' y='6' width='1' height='5' fill='%2393b1c0'/%3E%3C/svg%3E">
 
@@ -245,11 +245,8 @@ button{font-family:inherit;color:inherit;background:none;border:none}
    ============================================================ */
 #y2k-overlay {
   background-color: #e0f7fa;
-  background-image: 
-    radial-gradient(circle at 10% 20%, rgba(178, 235, 242, 0.4) 0%, transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(200, 250, 200, 0.4) 0%, transparent 40%),
-    linear-gradient(45deg, #e0f7fa 25%, #e8f5e9 25%, #e8f5e9 50%, #e0f7fa 50%, #e0f7fa 75%, #e8f5e9 75%, #e8f5e9 100%);
-  background-size: 100% 100%, 100% 100%, 40px 40px;
+  background-image: linear-gradient(45deg, #e0f7fa 25%, #e8f5e9 25%, #e8f5e9 50%, #e0f7fa 50%, #e0f7fa 75%, #e8f5e9 75%, #e8f5e9 100%);
+  background-size: 40px 40px;
   color: #00796b;
 }
 .y2k-container {
@@ -301,6 +298,73 @@ button{font-family:inherit;color:inherit;background:none;border:none}
   text-align: center;
   padding: 5px;
   font-family: var(--font-pixel);
+}
+.y2k-img-wrapper .y2k-del {
+  font-family: var(--font-pixel);
+  color: #ffd0e8;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 14px;
+  padding: 0 2px;
+}
+/* 背景：三张素材拼贴层 */
+.y2k-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+.y2k-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+}
+.y2k-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(224, 247, 250, 0.62);
+}
+@media (max-width: 639px) {
+  .y2k-bg { grid-template-columns: 1fr; grid-template-rows: repeat(3, 1fr); }
+}
+/* 上传图片按钮 */
+.y2k-upload {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin: 0 auto 36px;
+}
+.y2k-add-btn {
+  font-family: var(--font-pixel);
+  font-size: 1.15rem;
+  letter-spacing: 3px;
+  color: #00796b;
+  background: rgba(255,255,255,0.75);
+  border: 3px solid #80cbc4;
+  border-radius: 10px;
+  padding: 12px 26px;
+  cursor: pointer;
+  box-shadow: 0 0 14px rgba(128,203,196,0.9);
+  transition: all 0.2s;
+}
+.y2k-add-btn:hover {
+  background: #fff;
+  transform: scale(1.04);
+}
+.y2k-hint {
+  font-family: var(--font-pixel);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: #4faaa0;
+  margin-top: 10px;
 }
 
 /* 鸟笼+水母纯CSS动画 */
@@ -487,7 +551,7 @@ button{font-family:inherit;color:inherit;background:none;border:none}
 
 <header class="topbar">
   <div class="topbar-inner">
-    <span class="site-mark"><span class="star blink">*</span> SHEEP ON HIS RIGHT HAND <span class="star blink">*</span></span>
+    <span class="site-mark"><span class="star blink">*</span> GOSPEL <span class="star blink">*</span></span>
     <nav class="topnav" id="topnav" aria-label="Site navigation">
       <a href="#hero">shore</a>
       <a href="#fauna">fauna</a>
@@ -628,7 +692,14 @@ button{font-family:inherit;color:inherit;background:none;border:none}
      ========================================== -->
 <div class="hidden-overlay" id="y2k-overlay">
   <button class="close-btn" id="closeY2k">[X] CLOSE</button>
-  
+
+  <!-- 背景：三张用户素材拼贴 -->
+  <div class="y2k-bg" aria-hidden="true">
+    <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/KfGWbJLsRoiTWXxBmejce0zGnmf" alt="">
+    <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/FqqNbP9q7oFoG9xTK3kcovnpnib" alt="">
+    <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/JsU6bpD69ogzq8xwt3BcLXSCn6d" alt="">
+  </div>
+
   <!-- 鸟笼+水母纯CSS动画 -->
   <div class="jelly-cage-container">
     <div class="cage"></div>
@@ -652,6 +723,11 @@ button{font-family:inherit;color:inherit;background:none;border:none}
 
   <div class="y2k-container">
     <h2 class="y2k-title">DREAM ARCHIVE</h2>
+    <div class="y2k-upload">
+      <button type="button" class="y2k-add-btn" id="addY2kImg">+ ADD IMAGE</button>
+      <input type="file" id="y2kFile" accept="image/*" hidden>
+      <div class="y2k-hint">choose a picture on your device — it pins to this archive</div>
+    </div>
     <div class="y2k-gallery" id="y2kGallery">
       <!-- 动态渲染图片 -->
     </div>
@@ -1025,6 +1101,13 @@ const Y2K_DATA = {
   const y2kOverlay = $('#y2k-overlay');
   const y2kGallery = $('#y2kGallery');
   
+  const USER_IMG_KEY = 'ocean-shrine-user-imgs';
+  function loadUserImgs() {
+    try { return JSON.parse(localStorage.getItem(USER_IMG_KEY) || '[]'); } catch (e) { return []; }
+  }
+  function saveUserImgs(list) {
+    try { localStorage.setItem(USER_IMG_KEY, JSON.stringify(list)); } catch (e) { /* storage full */ }
+  }
   function renderY2kGallery() {
     y2kGallery.innerHTML = '';
     Y2K_DATA.images.forEach(img => {
@@ -1033,8 +1116,44 @@ const Y2K_DATA = {
       div.innerHTML = `<img src="${img.src}" alt="${img.tag}"><div class="tag">${img.tag}</div>`;
       y2kGallery.appendChild(div);
     });
+    loadUserImgs().forEach((src, i) => {
+      const div = document.createElement('div');
+      div.className = 'y2k-img-wrapper user';
+      div.innerHTML = `<img src="${src}" alt="your uploaded image"><div class="tag">YOUR IMAGE · <button type="button" class="y2k-del" data-i="${i}">del</button></div>`;
+      y2kGallery.appendChild(div);
+    });
   }
   renderY2kGallery();
+
+  // 本地图片上传：随时选图 → FileReader 预览并钉进 DREAM ARCHIVE
+  const y2kFile = $('#y2kFile');
+  $('#addY2kImg').addEventListener('click', () => y2kFile.click());
+  y2kFile.addEventListener('change', () => {
+    const file = y2kFile.files && y2kFile.files[0];
+    if (!file) return;
+    if (!file.type.startsWith('image/')) { showToast('please choose an image file'); y2kFile.value = ''; return; }
+    if (file.size > 4 * 1024 * 1024) { showToast('image too large · max 4MB'); y2kFile.value = ''; return; }
+    const reader = new FileReader();
+    reader.onload = () => {
+      let list = loadUserImgs();
+      list.unshift(reader.result);
+      list = list.slice(0, 8); // 仅保留最近 8 张，防止撑爆浏览器存储
+      saveUserImgs(list);
+      renderY2kGallery();
+      showToast('image pinned to the archive');
+    };
+    reader.readAsDataURL(file);
+    y2kFile.value = '';
+  });
+  // 删除用户自己钉的图
+  y2kGallery.addEventListener('click', (e) => {
+    const btn = e.target.closest('.y2k-del');
+    if (!btn) return;
+    let list = loadUserImgs();
+    list.splice(parseInt(btn.dataset.i, 10), 1);
+    saveUserImgs(list);
+    renderY2kGallery();
+  });
 
   function openY2kOverlay() {
     y2kOverlay.classList.add('active');
